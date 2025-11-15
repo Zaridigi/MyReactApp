@@ -3,9 +3,33 @@ import {useState} from 'react';
 
 import { articles } from './data.js';
 
+function SimpleHero() {
+  return (
+    <div className="bg-primary text-white py-5">
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-md-8">
+            <h1 className="display-4">Привет! Меня зовут Зарина</h1>
+            <p className="lead">Я Веб-разработчик</p>
+            <p>Создаю современные и удобные веб-приложения</p>
+          </div>
+          <div className="col-md-4 text-center">
+            <img 
+              src={`${process.env.PUBLIC_URL}/images/photo_1.jpg`} 
+              alt="Мое фото" 
+              className="rounded-circle img-thumbnail"
+              style={{width: '200px', height: '200px', objectFit: 'cover'}}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function List() {
   const listItems = articles.map(article =>
-    <div key={article.id} className="col">
+    <div key={article.id} className="portfolio-card">
       <div className="card" style={{ width: "18rem" }}>
         <img src={article.url_img} className="card-img-top" alt={article.title} />
         <div className="card-body">
@@ -138,6 +162,7 @@ const handleClick = event => {
   return (
     <div className="App">
         <Menu />
+      <SimpleHero />
       <Content/>
 
       {isShown && (
