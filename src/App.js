@@ -3,6 +3,10 @@ import {useState} from 'react';
 
 import { articles } from './data.js';
 
+
+
+
+
 function SimpleHero({ id }) {
   return (
     <section id={id} className="hero-section">
@@ -10,19 +14,35 @@ function SimpleHero({ id }) {
         <div className="row align-items-center h-100">
           <div className="col-lg-8">
             <div className="hero-content">
-              <h1 className="hero-title">Твое Имя</h1>
-              <p className="hero-subtitle">Веб-разработчик</p>
+              <h1 className="hero-title">Привет! Я Зарина</h1>
+              <p className="hero-subtitle">Это мой сайт о Web-разработке</p>
               <p className="hero-description">
-                Создаю современные и удобные веб-приложения. 
-                Превращаю идеи в функциональные цифровые решения.
+                О создании современных и удобных веб-приложений.
               </p>
-              {/* Кнопки удалены */}
+              <p className="hero-description">
+                И превращении идей в функциональные цифровые решения.
+              </p>
+              
+              {/* Минималистичная ссылка на GitHub */}
+              <div className="github-link">
+                <a 
+                  href="https://github.com/Zaridigi" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="github-btn"
+                >
+                  <span>GitHub</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
           <div className="col-lg-4 text-center">
             <div className="hero-image">
               <img 
-                src="/images/photo_1.jpg" 
+                src={process.env.PUBLIC_URL + "/images/photo_1.jpg"} 
                 alt="Мое фото" 
                 className="profile-photo"
               />
@@ -33,6 +53,9 @@ function SimpleHero({ id }) {
     </section>
   );
 }
+
+
+
 
 function AboutMe({ id }) {
   return (
@@ -46,7 +69,7 @@ function AboutMe({ id }) {
                 
                 <div className="about-content">
                   <p className="lead">
-                    Начинающий веб-разработчик, увлеченный созданием современных digital-решений
+                    Я начинающий Web-разработчик, увлеченный созданием современных digital-решений
                   </p>
                   
                   <p>
@@ -56,7 +79,7 @@ function AboutMe({ id }) {
                   </p>
 
                   <div className="skills mt-4">
-                    <h5>Технологии, которые я изучаю:</h5>
+                    <h5>Технологии, которые я использую:</h5>
                     <div className="skill-tags">
                       <span className="badge bg-primary me-2 mb-2">HTML5</span>
                       <span className="badge bg-primary me-2 mb-2">CSS3</span>
@@ -109,7 +132,7 @@ function Menu() {
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Zaridiji
+          Zaridigi
         </a>
         <button
           className="navbar-toggler"
@@ -199,6 +222,9 @@ function Content() {
 
 
 
+
+
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -237,21 +263,21 @@ function Contact() {
 
             <div className="contact-card">
               <div className="row align-items-start">
-                {/* Контактная информация - компактная версия */}
+                {/* Контактная информация */}
                 <div className="col-md-4">
                   <div className="contact-info">
                     <h5 className="mb-3">Контакты</h5>
                     <div className="contact-item">
                       <div className="contact-icon">📧</div>
                       <div className="contact-details">
-                        <span>example@domain.com</span>
+                        <span>zaridigi@mail.ru</span>
                       </div>
                     </div>
 
                     <div className="social-links mt-3">
                       <h6 className="mb-2">Соцсети</h6>
                       <div className="social-icons">
-                        <a href="#" className="social-link">GitHub</a>
+                        <a href="https://github.com/Zaridigi" className="social-link">GitHub</a>
                         <a href="#" className="social-link">Telegram</a>
                         <a href="#" className="social-link">VK</a>
                       </div>
@@ -274,7 +300,7 @@ function Contact() {
                             type="text"
                             id="name"
                             name="name"
-                            className="form-control form-control-sm"
+                            className="form-control"
                             value={formData.name}
                             onChange={handleInputChange}
                             required
@@ -288,7 +314,7 @@ function Contact() {
                             type="email"
                             id="email"
                             name="email"
-                            className="form-control form-control-sm"
+                            className="form-control"
                             value={formData.email}
                             onChange={handleInputChange}
                             required
@@ -301,7 +327,7 @@ function Contact() {
                           <textarea
                             id="message"
                             name="message"
-                            className="form-control form-control-sm"
+                            className="form-control"
                             rows="4"
                             value={formData.message}
                             onChange={handleInputChange}
@@ -310,7 +336,7 @@ function Contact() {
                           ></textarea>
                         </div>
 
-                        <button type="submit" className="btn btn-primary btn-send w-100">
+                        <button type="submit" className="btn btn-contact w-100">
                           Отправить сообщение
                         </button>
                       </form>
@@ -327,6 +353,9 @@ function Contact() {
 }
 
 
+
+
+
 function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -337,9 +366,6 @@ function Footer() {
           <p className="footer-text">
             &copy; {currentYear} Zaridiji
           </p>
-          <div className="footer-links">
-            <a href="#contact" className="footer-link">Контакты</a>
-          </div>
         </div>
       </div>
     </footer>
