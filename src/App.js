@@ -168,50 +168,68 @@ function Menu() {
 
 
 function Content() {
+  const cardStyle = {
+    width: "20rem",
+    height: "100%"
+  };
+
+  const imgStyle = {
+    height: "200px",
+    objectFit: "cover"
+  };
+
   return(
-  <div id="blog" className="container text-center" style={{marginTop:'30px', paddingTop: '80px', marginTop: '-80px'}}> {/* Добавлены отступы для якоря */}
-    <h2 className="section-title mb-5">Мой блог</h2>
-  <div className="row">
-    <div className="col-md-4 mb-4">
-    <div className="card mx-auto" style={{ width: "18rem" }}>
-  <img src="..." className="card-img-top" alt="..." />
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card’s content.
-    </p>
-    <a href="#" className="btn btn-primary">
-      Go somewhere
-    </a>
-  </div>
-</div></div>
+    <div id="blog" className="container text-center" style={{marginTop:'30px', paddingTop: '80px'}}>
+      <h2 className="section-title mb-5">Мой блог</h2>
+      <div className="row">
+        
+        <div className="col-md-4 mb-4">
+          <div className="card mx-auto" style={cardStyle}>
+            <img 
+              src={process.env.PUBLIC_URL + "/images/photo_2.png"} 
+              className="card-img-top" 
+              alt="Web-foto"
+              style={imgStyle} />
+            <div className="card-body d-flex flex-column">
+              <h5 className="card-title">Card title</h5>
+              <p className="card-text flex-grow-1">
+                Some quick example text to build on the card title and make up the bulk of the card’s content.
+              </p>
+              <a href="#" className="btn btn-primary mt-auto">Узнать больше</a>
+            </div>
+          </div>
+        </div>
+
   <div className="col-md-4 mb-4">
-    <div className="card mx-auto" style={{ width: "18rem" }}>
-  <img src="..." className="card-img-top" alt="..." />
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card’s content.
-    </p>
-    <a href="#" className="btn btn-primary">
-      Go somewhere
-    </a>
-  </div>
-</div></div>
+          <div className="card mx-auto" style={cardStyle}>
+            <img 
+              src={process.env.PUBLIC_URL + "/images/photo_3.jpg"} 
+              className="card-img-top" 
+              alt="Web-foto"
+              style={imgStyle} />
+            <div className="card-body d-flex flex-column">
+              <h5 className="card-title">Card title</h5>
+              <p className="card-text flex-grow-1">
+                Some quick example text to build on the card title and make up the bulk of the card’s content.
+              </p>
+              <a href="#" className="btn btn-primary mt-auto">Узнать больше</a>
+            </div>
+          </div>
+        </div>
+
 <div className="col-md-4 mb-4">
-    <div className="card mx-auto" style={{ width: "18rem" }}>
-  <img src="..." className="card-img-top" alt="..." />
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">
-      Some quick example text to build on the card title and make up the bulk of
-      the card’s content.
-    </p>
-    <a href="#" className="btn btn-primary">
-      Go somewhere
-              </a>
+          <div className="card mx-auto" style={cardStyle}>
+            <img 
+              src={process.env.PUBLIC_URL + "/images/photo_2.png"} 
+              className="card-img-top" 
+              alt="Web-foto"
+              style={imgStyle} />
+            <div className="card-body d-flex flex-column">
+              <h5 className="card-title">Card title</h5>
+              <p className="card-text flex-grow-1">
+                Some quick example text to build on the card title and make up the bulk of the card’s content.
+              </p>
+              <a href="#" className="btn btn-primary mt-auto">Узнать больше</a>
             </div>
           </div>
         </div>
