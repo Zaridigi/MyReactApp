@@ -277,9 +277,9 @@ function Contact() {
                     <div className="social-links mt-3">
                       <h6 className="mb-2">Соцсети</h6>
                       <div className="social-icons">
-                        <a href="https://github.com/Zaridigi" className="social-link">GitHub</a>
-                        <a href="#" className="social-link">Telegram</a>
-                        <a href="#" className="social-link">VK</a>
+                        <a href="https://github.com/Zaridigi" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
+                        <a href="https://t.me/ZariDigi" target="_blank" rel="noopener noreferrer" className="social-link">Telegram</a>
+                        <a href="https://vk.com/id28841101" target="_blank" rel="noopener noreferrer" className="social-link">VK</a>
                       </div>
                     </div>
                   </div>
