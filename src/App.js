@@ -191,11 +191,13 @@ function Content() {
               alt="Web-foto"
               style={imgStyle} />
             <div className="card-body d-flex flex-column">
-              <h5 className="card-title">Card title</h5>
+              <h5 className="card-title">Социальная сеть MomMeet</h5>
               <p className="card-text flex-grow-1">
-                Some quick example text to build on the card title and make up the bulk of the card’s content.
+                Безопасную социальная сеть для организации встреч мам с детьми-ровесниками. 
+                Интерактивная карта с игровыми площадками, парками, кафе. 
+                Планирование встреч, чаты, возрастные группы, события.
               </p>
-              <a href="#" className="btn btn-primary mt-auto">Узнать больше</a>
+              <a href="#" className="btn btn-primary mt-auto">Подробнее о проекте</a>
             </div>
           </div>
         </div>
@@ -208,11 +210,12 @@ function Content() {
               alt="Web-foto"
               style={imgStyle} />
             <div className="card-body d-flex flex-column">
-              <h5 className="card-title">Card title</h5>
+              <h5 className="card-title">Пекарня осетинских пирогов</h5>
               <p className="card-text flex-grow-1">
-                Some quick example text to build on the card title and make up the bulk of the card’s content.
+                Интернет-магазин традиционных осетинских пирогов с доставкой. 
+                Онлайн-заказ, отслеживание выпечки, блог о культуре питания.
               </p>
-              <a href="#" className="btn btn-primary mt-auto">Узнать больше</a>
+              <a href="#" className="btn btn-primary mt-auto">Подробнее о проекте</a>
             </div>
           </div>
         </div>
@@ -225,11 +228,12 @@ function Content() {
               alt="Web-foto"
               style={imgStyle} />
             <div className="card-body d-flex flex-column">
-              <h5 className="card-title">Card title</h5>
+              <h5 className="card-title">Оптимизация работы проектировщиков</h5>
               <p className="card-text flex-grow-1">
-                Some quick example text to build on the card title and make up the bulk of the card’s content.
+                Веб-приложение для автоматизации рутинных задач проектировщиков. 
+                Расчеты, чертежи, документация.
               </p>
-              <a href="#" className="btn btn-primary mt-auto">Узнать больше</a>
+              <a href="#" className="btn btn-primary mt-auto">Подробнее о проекте</a>
             </div>
           </div>
         </div>
@@ -423,7 +427,7 @@ function App() {
         {!isShown && (
           <div className="text-center">
             <button className="btn btn-primary btn-lg" onClick={handleClick}>
-              Показать еще
+              Открыть
             </button>
           </div>
         )}
