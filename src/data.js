@@ -1,7 +1,7 @@
 export const articles = [{
   id: 0, // Used in JSX as a key
   url_img: 'https://avatars.mds.yandex.net/i?id=d5e939566e27e25f16b9fd39f6d562d56732bbf1-5235257-images-thumbs&n=13',
-  title: 'Основы Web-разработки',
+  title: 'Плагин Emmet. Ускорение работы в VS Code',
   discription: 'spaceflight calculations',
   url: 'https://gzmland.ru/'
 }, {

@@ -3,9 +3,7 @@ import {useState} from 'react';
 
 import { articles } from './data.js';
 
-
-
-
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function SimpleHero({ id }) {
   return (
@@ -132,7 +130,7 @@ function Menu() {
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Zaridigi
+          ZARIDIGI
         </a>
         <button
           className="navbar-toggler"
