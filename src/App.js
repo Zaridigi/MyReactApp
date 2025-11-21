@@ -2,8 +2,13 @@ import './App.css';
 import {useState} from 'react';
 
 import { articles } from './data.js';
-
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+import { Routes, Route } from 'react-router-dom';
+import MomMeetPage from './components/MomMeetPage';
+import BakeryPage from './components/BakeryPage';
+import DesignersPage from './components/DesignersPage';
+
 
 function SimpleHero({ id }) {
   return (
@@ -406,6 +411,14 @@ function App() {
       <SimpleHero id="home" />
       <AboutMe id="about" />
       <Content/>
+
+            {/* Маршрутизация: страницы проектов */}
+      <Routes>
+        <Route path="/project/mommeet" element={<MomMeetPage />} />
+        <Route path="/project/bakery" element={<BakeryPage />} />
+        <Route path="/project/designers" element={<DesignersPage />} />
+      </Routes>
+
       
       {/* Блок блога с уменьшенным отступом */}
       <div className="container" style={{marginTop: '2rem', marginBottom: '2rem'}}> {/* Уменьшены отступы */}

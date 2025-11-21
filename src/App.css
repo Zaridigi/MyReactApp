@@ -670,6 +670,22 @@ html {
     width: 450px;
     height: 450px;
   }
+  
+  @media (max-width: 991px) {
+  .hero-image {
+    padding-left: 0;
+    text-align: center; /* Центрируем фото на мобильных */
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Одна колонка */
+    justify-items: center; /* Центрируем карточки */
+    gap: 3rem; /* Уменьшаем отступы */
+    padding: 1rem;
+  }
+}
 }
 
 
