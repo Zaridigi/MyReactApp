@@ -157,7 +157,7 @@ function Menu() {
               <a className="nav-link" href="#about">Обо мне</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#blog">Мой блог</a>
+              <a className="nav-link" href="#blog">Мои проекты</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#contact">Связь со мной</a>
