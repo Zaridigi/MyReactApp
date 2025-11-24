@@ -4,10 +4,13 @@ import {useState} from 'react';
 import { articles } from './data.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import { Routes, Route } from 'react-router-dom';
-import MomMeetPage from './components/MomMeetPage';
-import BakeryPage from './components/BakeryPage';
-import DesignersPage from './components/DesignersPage';
+import { init, send } from '@emailjs/browser';
+
+init('qi12KMEWFdIMAOeTB'); // Ваш Public Key из EmailJS
+
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 
 function SimpleHero({ id }) {
@@ -18,14 +21,17 @@ function SimpleHero({ id }) {
           <div className="col-lg-8">
             <div className="hero-content">
               <h1 className="hero-title">Привет! Я Зарина</h1>
-              <p className="hero-subtitle">Это мой сайт о Web-разработке</p>
+              <p className="hero-subtitle">Добро пожаловать в моё пространство веб-разработки</p>
               <p className="hero-description">
-                О создании современных и удобных веб-приложений.
+                Создаю современные и удобные веб-приложения.
               </p>
               <p className="hero-description">
-                И превращении идей в функциональные цифровые решения.
+                И трансформирую идеи в функциональные
               </p>
-              
+              <p className="hero-description">
+                цифровые решения.
+              </p>
+
               {/* Минималистичная ссылка на GitHub */}
               <div className="github-link">
                 <a 
@@ -72,11 +78,11 @@ function AboutMe({ id }) {
                 
                 <div className="about-content">
                   <p className="lead">
-                    Я начинающий Web-разработчик, увлеченный созданием современных digital-решений
+                    Я начинающий веб-разработчик, увлеченный созданием современных digital-решений
                   </p>
                   
                   <p>
-                    Активно изучаю веб-разработку и создаю свои первые проекты. 
+                    Активно изучаю новые технологии и создаю свои первые проекты.  
                     Мне нравится превращать идеи в функциональные веб-приложения 
                     и постоянно совершенствовать свои навыки.
                   </p>
@@ -157,7 +163,7 @@ function Menu() {
               <a className="nav-link" href="#about">Обо мне</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#blog">Мои проекты</a>
+              <a className="nav-link" href="#blog">Проекты</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#contact">Связь со мной</a>
@@ -168,6 +174,8 @@ function Menu() {
     </nav>
   );
 }
+
+
 
 
 function Content() {
@@ -181,41 +189,71 @@ function Content() {
     objectFit: "cover"
   };
 
-  return(
-    <div id="blog" className="container text-center" style={{marginTop:'30px', paddingTop: '80px'}}>
-      <h2 className="section-title mb-5">Мой блог</h2>
-      <div className="row">
-        
-        <div className="col-md-4 mb-4">
+  // Настройки карусели
+  const settings = {
+    dots: true,                  // Показывать точки-индикаторы
+    infinite: true,             // Зацикливание
+    speed: 500,              // Скорость анимации
+    slidesToShow: 3,         // Сколько карточек показывать
+    slidesToScroll: 1,      // Сколько прокручивать за раз
+    autoplay: true,           // Автопрокрутка
+    autoplaySpeed: 3000,     // Интервал автопрокрутки (мс)
+    responsive: [
+      {
+        breakpoint: 992,       // Для экранов < 992px
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,       // Для экранов < 768px
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+  return (
+    <div id="blog" className="container text-center" style={{ marginTop: '30px', paddingTop: '80px' }}>
+      <h2 className="section-title mb-5">Проекты</h2>
+
+      <Slider {...settings}>
+        {/* Карточка 1 */}
+        <div>
           <div className="card mx-auto" style={cardStyle}>
-            <img 
-              src={process.env.PUBLIC_URL + "/images/photo_2.png"} 
-              className="card-img-top" 
+            <img
+              src={process.env.PUBLIC_URL + "/images/photo_2.png"}
+              className="card-img-top"
               alt="Web-foto"
-              style={imgStyle} />
+              style={imgStyle}
+            />
             <div className="card-body d-flex flex-column">
               <h5 className="card-title">Социальная сеть MomMeet</h5>
               <p className="card-text flex-grow-1">
-                Безопасную социальная сеть для организации встреч мам с детьми-ровесниками. 
-                Интерактивная карта с игровыми площадками, парками, кафе. 
-                Планирование встреч, чаты, возрастные группы, события.
+                Безопасная социальная сеть для организации встреч мам с детьми-ровесниками.
+                Интерактивная карта с игровыми площадками, парками.
               </p>
               <a href="#" className="btn btn-primary mt-auto">Подробнее о проекте</a>
             </div>
           </div>
         </div>
 
-  <div className="col-md-4 mb-4">
+        {/* Карточка 2 */}
+        <div>
           <div className="card mx-auto" style={cardStyle}>
-            <img 
-              src={process.env.PUBLIC_URL + "/images/photo_3.jpg"} 
-              className="card-img-top" 
+            <img
+              src={process.env.PUBLIC_URL + "/images/photo_3.jpg"}
+              className="card-img-top"
               alt="Web-foto"
-              style={imgStyle} />
+              style={imgStyle}
+            />
             <div className="card-body d-flex flex-column">
               <h5 className="card-title">Пекарня осетинских пирогов</h5>
               <p className="card-text flex-grow-1">
-                Интернет-магазин традиционных осетинских пирогов с доставкой. 
+                Интернет-магазин традиционных осетинских пирогов с доставкой.
                 Онлайн-заказ, отслеживание выпечки, блог о культуре питания.
               </p>
               <a href="#" className="btn btn-primary mt-auto">Подробнее о проекте</a>
@@ -223,27 +261,30 @@ function Content() {
           </div>
         </div>
 
-<div className="col-md-4 mb-4">
+        {/* Карточка 3 */}
+        <div>
           <div className="card mx-auto" style={cardStyle}>
-            <img 
-              src={process.env.PUBLIC_URL + "/images/photo_2.png"} 
-              className="card-img-top" 
+            <img
+              src={process.env.PUBLIC_URL + "/images/photo_2.png"}
+              className="card-img-top"
               alt="Web-foto"
-              style={imgStyle} />
+              style={imgStyle}
+            />
             <div className="card-body d-flex flex-column">
               <h5 className="card-title">Оптимизация работы проектировщиков</h5>
               <p className="card-text flex-grow-1">
-                Веб-приложение для автоматизации рутинных задач проектировщиков. 
+                Программа для автоматизации рутинных задач проектировщиков.
                 Расчеты, чертежи, документация.
               </p>
               <a href="#" className="btn btn-primary mt-auto">Подробнее о проекте</a>
             </div>
           </div>
         </div>
-      </div>
+      </Slider>
     </div>
-  )
+  );
 }
+
 
 
 
@@ -258,22 +299,52 @@ function Contact() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
+  const [error, setError] = useState(''); // Для отображения ошибок
+
+
+  function handleInputChange(e) {
     const { name, value } = e.target;
     setFormData(prevState => ({
       ...prevState,
       [name]: value
     }));
-  };
+  }
 
-  const handleSubmit = (e) => {
+    const handleSubmit = async (e) => { // Добавляем async
     e.preventDefault();
-    console.log('Данные формы:', formData);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 5000);
+
+    // Валидация формы
+    if (!formData.name || !formData.email || !formData.message) {
+      setError('Пожалуйста, заполните все поля');
+      return;
+    }
+
+    try {
+      // Отправка письма через EmailJS
+      const response = await send(
+        'service_9cwz4wq',      // Замените на ваш Service ID
+        'template_rizwgaq',    // Замените на ваш Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        }
+      );
+
+      if (response.status === 200) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setError('');
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        setError('Ошибка отправки. Попробуйте позже.');
+      }
+    } catch (err) {
+      setError('Нет связи с сервисом EmailJS. Проверьте подключение.');
+      console.error('Ошибка EmailJS:', err);
+    }
   };
 
   return (
@@ -283,7 +354,8 @@ function Contact() {
           <div className="col-lg-10 col-xl-8">
             <div className="text-center mb-4">
               <h2 className="section-title mb-3">Связь со мной</h2>
-              <p className="lead mb-0">Есть вопросы или предложения? Буду рада общению!</p>
+              <p className="lead mb-0">Есть идея, вопрос или просто хотите поздороваться?</p>
+              <p className="lead mb-0">Пишите! Небольшая форма ниже поможет быстро связаться со мной</p>
             </div>
 
             <div className="contact-card">
@@ -374,6 +446,7 @@ function Contact() {
         </div>
       </div>
     </section>
+
   );
 }
 
@@ -389,7 +462,7 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <p className="footer-text">
-            &copy; {currentYear} Zaridiji
+            &copy; {currentYear} Zaridigi
           </p>
         </div>
       </div>
@@ -411,13 +484,6 @@ function App() {
       <SimpleHero id="home" />
       <AboutMe id="about" />
       <Content/>
-
-            {/* Маршрутизация: страницы проектов */}
-      <Routes>
-        <Route path="/project/mommeet" element={<MomMeetPage />} />
-        <Route path="/project/bakery" element={<BakeryPage />} />
-        <Route path="/project/designers" element={<DesignersPage />} />
-      </Routes>
 
       
       {/* Блок блога с уменьшенным отступом */}

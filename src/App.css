@@ -45,6 +45,7 @@ html {
 
 
 
+
 /* Стили для карточек блога */
 .portfolio-grid {
   display: grid;
@@ -58,6 +59,9 @@ html {
 .portfolio-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+
 
 .portfolio-card:hover {
   transform: translateY(-8px);
@@ -103,6 +107,11 @@ html {
   line-height: 1.6;
   font-size: 0.95rem;
 }
+
+
+
+
+
 
 /* Градиентные кнопки для карточек блога */
 .portfolio-card .btn-primary {
