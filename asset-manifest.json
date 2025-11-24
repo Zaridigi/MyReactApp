@@ -1,12 +1,16 @@
 {
   "files": {
-    "main.css": "/MyReactApp/static/css/main.e37b4265.css",
-    "main.js": "/MyReactApp/static/js/main.c3a46308.js",
+    "main.css": "/MyReactApp/static/css/main.ab98736b.css",
+    "main.js": "/MyReactApp/static/js/main.b077d7ae.js",
     "static/js/206.a77fb5ed.chunk.js": "/MyReactApp/static/js/206.a77fb5ed.chunk.js",
-    "index.html": "/MyReactApp/index.html"
+    "static/media/slick.svg": "/MyReactApp/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/MyReactApp/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/MyReactApp/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "index.html": "/MyReactApp/index.html",
+    "static/media/slick.woff": "/MyReactApp/static/media/slick.295183786cd8a1389865.woff"
   },
   "entrypoints": [
-    "static/css/main.e37b4265.css",
-    "static/js/main.c3a46308.js"
+    "static/css/main.ab98736b.css",
+    "static/js/main.b077d7ae.js"
   ]
 }
