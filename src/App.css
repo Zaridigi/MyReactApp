@@ -45,7 +45,6 @@ html {
 
 
 
-
 /* Стили для карточек блога */
 .portfolio-grid {
   display: grid;
@@ -56,14 +55,17 @@ html {
   margin: 0 auto;
 }
 
-.portfolio-card {
+.c {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
 
 
-.portfolio-card:hover {
+
+
+
+/* .portfolio-card:hover {
   transform: translateY(-8px);
 }
 
@@ -107,14 +109,14 @@ html {
   line-height: 1.6;
   font-size: 0.95rem;
 }
-
+ */
 
 
 
 
 
 /* Градиентные кнопки для карточек блога */
-.portfolio-card .btn-primary {
+/* .portfolio-card .btn-primary {
   background: radial-gradient(circle at center, rgb(13, 110, 253) 0%, #87CEEB 100%);
   border: none;
   padding: 0.8rem 1.5rem;
@@ -150,7 +152,12 @@ html {
   box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
   color: white;
   text-decoration: none;
-}
+} */
+
+
+
+
+
 
 /* Градиентные кнопки для карточек Content (Go somewhere) */
 .card .btn-primary {
@@ -496,6 +503,7 @@ html {
   padding-left: 3rem;
 }
 
+
 .hero-title {
   font-size: 4rem;
   font-weight: 800;
@@ -503,6 +511,7 @@ html {
   line-height: 1.1;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
 
 .hero-subtitle {
   font-size: 1.8rem;

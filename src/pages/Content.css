@@ -1,0 +1,178 @@
+/* Контейнер карусели */
+.slick-slider {
+  margin: 0 -15px; /* Убираем внешние отступы */
+}
+
+.slick-list {
+  padding: 0 15px; /* Компенсируем отступы */
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex;
+  align-items: stretch; /* Выравниваем по высоте */
+  gap: 16px; /* Расстояние между карточками */
+}
+
+/* Каждая карточка в слайдере */
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+  padding: 0 8px; /* Отступы по бокам */
+}
+
+/* Сама карточка проекта */
+.project-card {
+  width: 100%;
+  max-width: 360px; /* Фиксированная ширина карточки */
+  height: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+   margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(13, 110, 253, 0.2);
+}
+
+/* Изображение в карточке */
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Тело карточки */
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.card-text {
+  color: #5d6d7e;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+  flex: 1; /* Растягиваем на оставшееся место */
+}
+
+/* Кнопка */
+.btn-primary {
+  background: radial-gradient(circle at center, rgb(13, 110, 253) 0%, #87CEEB 100%);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+  color: white;
+}
+
+
+
+/* Простой вариант точек - горизонтальное расположение */
+.slick-dots {
+  bottom: -40px;
+  position: relative;
+  margin-top: 30px;
+  text-align: center; /* Центрируем точки */
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block; /* Горизонтальное расположение */
+  margin: 0 8px;
+}
+
+.slick-dots li button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  background: #dee2e6;
+  border-radius: 50%;
+  font-size: 0;
+  color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* Полностью убираем стандартные цифры */
+.slick-dots li button:before {
+  display: none !important;
+  content: '' !important;
+  font-size: 0 !important;
+}
+
+.slick-dots li.slick-active button {
+  background: #007bff;
+  transform: scale(1.2);
+}
+
+.slick-dots li button:hover {
+  background: #007bff;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .slick-dots {
+    bottom: -30px;
+    margin-top: 25px;
+  }
+  
+  .slick-dots li {
+    margin: 0 6px;
+  }
+  
+  .slick-dots li button {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+
