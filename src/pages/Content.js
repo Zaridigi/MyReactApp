@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import './Content.css'; // Подключите стили
+import './Content.css';
 
 function Content() {
   const projects = [
@@ -24,94 +24,77 @@ function Content() {
     }
   ];
 
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  arrows: false, // Убираем стрелки "Previous/Next"
-  appendDots: dots => (
-    <div style={{ bottom: '-40px' }}>
-      <ul style={{ margin: '0px' }}>{dots}</ul>
-    </div>
-  ),
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    centerMode: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerMode: false
+        }
+      },
+      {
+        breakpoint: 768, // Мобильные
+        settings: {
+          slidesToShow: 1, // ОДНА карточка
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '40px'
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1, // ОДНА карточка
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: '20px'
+        }
       }
-    },
-    {
-      breakpoint: 992,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: '40px'
-      }
-    },
-    {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: '20px'
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: '10px'
-      }
-    }
-  ]
-};
+    ]
+  };
 
   return (
-    <div id="blog" className="container text-center" style={{ marginTop: '30px', paddingTop: '80px' }}>
+    <div id="projects" className="container text-center content-section">
       <h2 className="section-title mb-5">Проекты</h2>
-
-      <Slider {...settings}>
-        {projects.map((project) => (
-          <div key={project.id} className="px-2">
-            <div className="card mx-auto project-card">
-              <img
-                src={process.env.PUBLIC_URL + project.image}
-                className="card-img-top"
-                alt={project.title}
-                loading="lazy"
-              />
-              <div className="card-body">
-                <h5 className="card-title">{project.title}</h5>
-                <p className="card-text">{project.description}</p>
-                <a
-                  href="#!"
-                  onClick={(e) => e.preventDefault()}
-                  className="btn btn-primary mt-auto"
-                >
-                  Подробнее о проекте
-                </a>
+      
+      <div className="projects-slider-container">
+        <Slider {...settings}>
+          {projects.map((project) => (
+            <div key={project.id} className="project-slide">
+              <div className="card project-card">
+                <img
+                  src={process.env.PUBLIC_URL + project.image}
+                  className="card-img-top"
+                  alt={project.title}
+                  loading="lazy"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{project.title}</h5>
+                  <p className="card-text">{project.description}</p>
+                  <a
+                    href="#!"
+                    onClick={(e) => e.preventDefault()}
+                    className="btn btn-primary project-btn"
+                  >
+                    Подробнее о проекте
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 }

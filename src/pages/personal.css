@@ -1,0 +1,25 @@
+/* Добавьте в CSS */
+.policy-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.policy-page .card {
+  border: none;
+  border-radius: 15px;
+}
+
+.policy-page h1 {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.policy-page h5 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.policy-page p, .policy-page li {
+  color: #5d6d7e;
+  line-height: 1.6;
+}

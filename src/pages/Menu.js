@@ -1,42 +1,24 @@
 import React from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Menu() {
-  return(
-    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          ZARIDIGI
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav" style={{justifyContent: 'flex-end'}}>
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#home">Главная</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#about">Обо мне</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#blog">Проекты</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#contact">Связь со мной</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  return (
+    <Navbar bg="light" expand="lg" fixed="top">
+      <Container fluid>
+        <Navbar.Brand href="#home">ZARIDIGI</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          <Nav>
+            <Nav.Link href="#home">Главная</Nav.Link>
+            <Nav.Link href="#about">Обо мне</Nav.Link>
+            <Nav.Link href="#projects">Проекты</Nav.Link>
+            <Nav.Link href="#contact">Связь со мной</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 
-export default Menu; 
+export default Menu;

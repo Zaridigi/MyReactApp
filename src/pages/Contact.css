@@ -1,0 +1,361 @@
+/* Contact Section */
+.contact-section {
+  background-color: #f8f9fa;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(13, 110, 253, 0.1);
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  border: 1px solid rgba(13, 110, 253, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+/* Заголовок с подчеркиванием */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, rgb(13, 110, 253) 0%, #87CEEB 100%);
+  border-radius: 2px;
+}
+
+.contact-info h5 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+  padding: 0.3rem 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(13, 110, 253, 0.05);
+  border: 1px solid rgba(13, 110, 253, 0.1);
+}
+
+.contact-item:hover {
+  background: rgba(13, 110, 253, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.1);
+}
+
+.contact-icon {
+  font-size: 1.1rem;
+  margin-right: 0.8rem;
+  margin-top: 0.1rem;
+  color: rgb(13, 110, 253);
+}
+
+.contact-details span {
+  color: #2c3e50;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Социальные ссылки с градиентом */
+.social-links h6 {
+  color: #2c3e50;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: radial-gradient(circle at center, rgb(13, 110, 253) 0%, #87CEEB 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+  border: 1px solid rgba(13, 110, 253, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.social-link:hover::before {
+  left: 100%;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* Форма */
+.contact-form {
+  height: 100%;
+  padding: 0.5rem 0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid #e9ecef;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.form-control:focus {
+  border-color: rgb(13, 110, 253);
+  background-color: white;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.1);
+  outline: none;
+}
+
+.compact-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Согласие на обработку данных */
+.agreement-section {
+  margin: 0.8rem 0 1.2rem 0;
+  padding: 0.5rem 0;
+}
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.agreement-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  margin-right: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.agreement-checkbox:checked {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.agreement-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.agreement-checkbox:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+  outline: none;
+}
+
+.policy-link {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.policy-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.form-check-label {
+  font-size: 0.85rem;
+  line-height: 1.3;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Кнопка отправки с градиентом */
+.btn-contact {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  background: radial-gradient(circle at center, rgb(13, 110, 253) 0%, #87CEEB 100%);
+  border: none;
+  transition: all 0.3s ease;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-contact:hover::before {
+  left: 100%;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+  color: white;
+}
+
+/* Успешное сообщение */
+.alert-success {
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  border-left: 4px solid #28a745;
+  margin-bottom: 1rem;
+}
+
+.alert-danger {
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #f8d7da 0%, #f1b0b7 100%);
+  color: #721c24;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #dc3545;
+  margin-bottom: 1rem;
+}
+
+#contact {
+  scroll-margin-top: 30px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 1.5rem 0;
+  }
+  
+  .contact-card {
+    padding: 1.2rem 1rem 0.8rem 1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 0.4rem;
+  }
+  
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 0.4rem;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+  
+  .contact-info {
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .form-check-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-card {
+    padding: 1rem 0.8rem 0.6rem 0.8rem;
+  }
+  
+  .social-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  
+  .btn-contact {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .agreement-checkbox {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+  }
+  
+  .form-check-label {
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+}

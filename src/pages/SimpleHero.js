@@ -10,13 +10,8 @@ function SimpleHero({ id }) {
               <h1 className="hero-title">Привет! Я Зарина</h1>
               <p className="hero-subtitle">Добро пожаловать в моё пространство веб-разработки</p>
               <p className="hero-description">
-                Создаю современные и удобные веб-приложения.
-              </p>
-              <p className="hero-description">
-                И трансформирую идеи в функциональные
-              </p>
-              <p className="hero-description">
-                цифровые решения.
+                Создаю современные и удобные веб-приложения. <br />
+                <span className="second-line">И трансформирую идеи в функциональные цифровые решения.</span>
               </p>
 
               {/* Минималистичная ссылка на GitHub */}
