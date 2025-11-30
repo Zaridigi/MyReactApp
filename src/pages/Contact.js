@@ -193,18 +193,22 @@ function Contact() {
                             <label className="form-check-label" htmlFor="agreement">
                               Соглашаюсь с{' '}
                               <a 
-                                href="/privacy-policy" 
-                                className="policy-link"
-                              >
-                                Политикой конфиденциальности
-                              </a>{' '}
+  href="#/privacy-policy" 
+  className="policy-link"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Политикой конфиденциальности
+</a>{' '}
                               и даю{' '}
                               <a 
-                                href="/personal-data-agreement" 
-                                className="policy-link"
-                              >
-                                согласие на обработку персональных данных
-                              </a>
+  href="#/personal-data-agreement" 
+  className="policy-link"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  согласие на обработку персональных данных
+</a>
                             </label>
                           </div>
                         </div>

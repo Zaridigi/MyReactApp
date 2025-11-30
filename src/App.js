@@ -1,5 +1,6 @@
 import React from 'react';
-import { HashRouter } from 'react-router-dom'; // Можно убрать, если не нужны маршруты
+import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 
 // Импорты компонентов
 import Menu from './pages/Menu';
@@ -9,12 +10,13 @@ import Content from './pages/Content';
 import List from './pages/List';
 import Contact from './pages/Contact';
 import Footer from './pages/Footer';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import PersonalDataAgreement from './pages/PersonalDataAgreement';
 
 import './App.css';
 import './pages/Content.css';
-import { useState } from 'react';
 
-function App() {
+function MainPage() {
   const [isShown, setIsShown] = useState(false);
 
   const handleClick = () => {
@@ -22,10 +24,7 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Menu />
-      
-      {/* Компоненты идут друг за другом */}
+    <div>
       <SimpleHero id="home" />
       <AboutMe id="about" />
       <Content />
@@ -55,7 +54,24 @@ function App() {
         )}
       </div>
       <Contact />
-      <Footer />
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Menu />
+            <MainPage />
+            <Footer />
+          </>
+        } />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/personal-data-agreement" element={<PersonalDataAgreement />} />
+      </Routes>
     </div>
   );
 }
