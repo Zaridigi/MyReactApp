@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 // Импорты компонентов
@@ -18,6 +18,21 @@ import './pages/Content.css';
 
 function MainPage() {
   const [isShown, setIsShown] = useState(false);
+  const location = useLocation();
+
+  // Автоматический скролл при изменении хеша
+  useEffect(() => {
+    if (location.hash) {
+      const hash = location.hash.replace('#/', '').replace('#', '');
+      // Ждем пока DOM обновится
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500);
+    }
+  }, [location]);
 
   const handleClick = () => {
     setIsShown((current) => !current);
@@ -53,7 +68,7 @@ function MainPage() {
           </div>
         )}
       </div>
-      <Contact />
+      <Contact id="contact" />
     </div>
   );
 }
@@ -61,14 +76,15 @@ function MainPage() {
 function App() {
   return (
     <div className="App">
+      <Menu />
       <Routes>
         <Route path="/" element={
           <>
-            <Menu />
             <MainPage />
             <Footer />
           </>
         } />
+        {/* Эти страницы теперь доступны только по прямой ссылке */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/personal-data-agreement" element={<PersonalDataAgreement />} />
       </Routes>

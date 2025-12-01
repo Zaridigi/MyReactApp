@@ -42,4 +42,4 @@ function AboutMe({ id }) {
   );
 }
 
-export default AboutMe; // ← Добавьте экспорт
+export default AboutMe;
