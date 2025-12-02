@@ -1,6 +1,6 @@
+// src/pages/List.js
 import React from 'react';
 import { articles } from '../data.js';
-  // Путь зависит от расположения файлов
 
 function List() {
   const listItems = articles.map(article =>
@@ -12,7 +12,12 @@ function List() {
           <p className="card-text">
             {article.description}
           </p>
-          <a href={article.url} className="btn btn-primary">
+          <a 
+            href={article.url} 
+            className="btn btn-primary"
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
             Почитать
           </a>
         </div>
@@ -27,4 +32,4 @@ function List() {
   );
 }
 
-export default List; 
+export default List;  
