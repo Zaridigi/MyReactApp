@@ -4,9 +4,40 @@
     <meta charset="utf-8">
     <title>My React App</title>
     <script>
-      sessionStorage.redirect = location.pathname;
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search) {
+          var q = {};
+          l.search.slice(1).split('&').forEach(function(v) {
+            var a = v.split('=');
+            q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+          });
+          if (q.p !== undefined) {
+            window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + (q.p || '') +
+              (q.q ? ('?' + q.q) : '') +
+              l.hash
+            );
+          }
+        }
+      }(window.location))
     </script>
-    <meta http-equiv="refresh" content="0;URL='/MyReactApp/'"></meta>
 </head>
-<body></body>
+<body>
+    <script>
+        // Редирект на главную с хэшем
+        var path = window.location.pathname;
+        if (path.includes('/MyReactApp')) {
+            path = path.replace('/MyReactApp', '');
+        }
+        if (path !== '/' && path !== '/index.html') {
+            window.location.href = '/MyReactApp/#' + path.replace(/^\//, '');
+        } else {
+            window.location.href = '/MyReactApp/';
+        }
+    </script>
+    <p>Redirecting to <a href="/MyReactApp/">My React App</a>...</p>
+</body>
 </html>
